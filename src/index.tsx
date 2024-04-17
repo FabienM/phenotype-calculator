@@ -1,11 +1,11 @@
+import '@fontsource/inter';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import '@fontsource/inter';
 
-import BirmanPage from './ui/pages/Birman.page';
 import { raceBirman } from './genetics/birman.race';
+import BirmanPage from './ui/pages/Birman.page';
 
 
 const root = ReactDOM.createRoot(

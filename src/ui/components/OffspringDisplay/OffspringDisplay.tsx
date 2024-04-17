@@ -35,15 +35,19 @@ function OffSpringDisplay(props: OffspringDisplayProp) {
             .map(offspring => getPhenotype(offspring)))
     const rows: GridRowsProp = Object.keys(stats).map(code => {
         return {
-            id: code
+            id: code,
+            sex: stats[code].sex,
+            description: stats[code].description,
+            ratio: stats[code].ratio
         }
     })
     const columns: GridColDef[] = [
-        { field: 'id', headerName: 'ID', width: 150 },
+        { field: 'sex', headerName: 'Sex', width: 150 },
+        { field: 'description', headerName: 'Description', width: 150 },
+        { field: 'ratio', headerName: 'Ratio', width: 150 },
       ];
     return (
         <DataGrid rows={rows} columns={columns} />
-        // <Typography>Test</Typography>
     );
 }
 

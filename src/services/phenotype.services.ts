@@ -60,15 +60,6 @@ export function getPossibleGenes(race: Race, sex: Sex, phenotype: Phenotype): Po
             }
             return
         }
-        // for (let geneCode in trait.values[traitValue]) {
-        //     if (!result[geneCode]) {
-        //         result[geneCode] = trait.values[traitValue][geneCode]
-        //         continue
-        //     }
-        //     result[geneCode] = result[geneCode].filter(pair1 =>
-        //         trait.values[traitValue][geneCode].some(pair2 => allelePairEquals(pair1, pair2))
-        //     )
-        // }
         for (let geneCode in trait.values[traitValue]) {
             result[geneCode] = result[geneCode].filter(pair1 =>
                 !trait.values[traitValue][geneCode].some(pair2 => allelePairEquals(pair1, pair2))

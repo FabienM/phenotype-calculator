@@ -53,6 +53,7 @@ function CatDescriptor(prop: CatDescriptorProp) {
                                         onChange={a => {
                                             genotypeState[gene.code] = a;
                                             setGenotypeState(genotypeState);
+                                            prop.onChange?.(genotypeState);
                                         }} />
                                 </Grid>
                             ))}
