@@ -3,7 +3,7 @@ import { raceBirman } from "./genetics/birman.race"
 import { raceSimpleBirman } from "./genetics/simple.birman.race"
 import { generateOffsprings } from "./services/offsprings.services"
 import { encodeGenotype, getPhenotype } from "./services/organism.services"
-import { getPhenotypeStats } from "./services/phenotype.services"
+import { describe, getPhenotypeStats } from "./services/phenotype.services"
 
 const gatine: Organism = {
     genotype: {
@@ -54,7 +54,7 @@ console.log(encodeGenotype(simpleGatine))
 let result = []
 let sum = getPhenotypeStats(raceSimpleBirman, offsprings)
 for (let key in sum) {
-    result.push([sum[key].sex, sum[key].description, sum[key].ratio])
+    result.push([sum[key].sex, describe(raceBirman, sum[key].phenotype), sum[key].ratio])
 }
 console.table(result);
 
@@ -67,6 +67,6 @@ sum = getPhenotypeStats(
     generateOffsprings(maleGatine, gatine).map(offspring => getPhenotype(offspring))
 );
 for (let key in sum) {
-    result.push([sum[key].sex, sum[key].description, sum[key].ratio])
+    result.push([sum[key].sex, describe(raceBirman, sum[key].phenotype), sum[key].ratio])
 }
 console.table(result)

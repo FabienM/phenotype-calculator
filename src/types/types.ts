@@ -19,10 +19,10 @@ export type TraitPossibleGenePairs = { [code: GeneCode]: AllelePair[] }
 export type Phenotype = { [code: TraitCode]: TraitValue | null }
 export type PhenotypeIndex = {
     [x: string]: {
-        description: string
         sex: TraitValue | null
         counter: number
-        ratio: string
+        ratio: number
+        phenotype: Phenotype
     }
 }
 

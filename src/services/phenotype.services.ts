@@ -10,7 +10,7 @@ function hashPhenotype(phenotype: Phenotype): string {
     return hash
 }
 
-function describe(race: Race, phenotype: Phenotype): string {
+export function describe(race: Race, phenotype: Phenotype): string {
     let res = ""
     for (let i in race.traits) {
         if (phenotype[race.traits[i].code])
@@ -28,16 +28,16 @@ export function getPhenotypeStats(race: Race, phenotypes: Phenotype[]): Phenotyp
         if (!(key in index)) {
             index[key] = {
                 counter: 0,
-                ratio: "0",
+                ratio: 0,
                 sex: p['sex'],
-                description: describe(race, p)
+                phenotype: p
             }
         }
         sum++
         index[key].counter++
     })
     for (let key in index) {
-        index[key].ratio = (index[key].counter / sum).toLocaleString(undefined, { style: 'percent', minimumFractionDigits: 2 })
+        index[key].ratio = index[key].counter / sum
     }
     return index
 }

@@ -36,7 +36,7 @@ function BirmanPage(props: BirmanPageProp) {
                     <Typography level='h2'>Offsprings</Typography>
                 </Grid>
                 <Grid sm={12}>
-                    <OffSpringDisplay female={femaleState} male={maleState} />
+                    <OffSpringDisplay race={props.race} female={femaleState} male={maleState} />
                 </Grid>
             </Grid>
         </Stack >

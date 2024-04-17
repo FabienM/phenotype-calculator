@@ -2,7 +2,7 @@ import { Organism } from "../types/interfaces";
 import { Phenotype } from "../types/types";
 
 export function encodeGenotype(organism: Organism): string {
-    let encoded = ""
+    let encoded = "";
     organism.race.genes.forEach(gene =>
         encoded = `${encoded} ${organism.genotype[gene.code][0]}${organism.genotype[gene.code][1]}`)
     return encoded.trimStart();
