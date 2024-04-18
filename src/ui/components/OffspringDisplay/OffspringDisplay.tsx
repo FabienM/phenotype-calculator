@@ -48,7 +48,7 @@ function OffSpringDisplay(props: OffspringDisplayProp) {
         columnVisibilityModel[trait.code] = false;
     })
     const rows: GridRowsProp = Object.keys(stats).map(code => {
-        let result: { [key: string]: string | number | null } = {
+        const result: { [key: string]: string | number | null } = {
             id: code,
             sex: stats[code].sex,
             description: describe(props.race, stats[code].phenotype),

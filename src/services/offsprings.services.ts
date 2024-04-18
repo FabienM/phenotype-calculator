@@ -23,8 +23,8 @@ function buildGeneTree(genes: Gene[], sex: Sex, male: Organism, female: Organism
         return [];
     }
     const currentGene = genes[0]
-    let trees: GeneTree[] = []
-    let subtree = buildGeneTree(genes.slice(1), sex, male, female)
+    const trees: GeneTree[] = []
+    const subtree = buildGeneTree(genes.slice(1), sex, male, female)
     male.genotype[currentGene.code].forEach(maleValue => female.genotype[currentGene.code].forEach(femaleValue => {
         let maleValueIfSexual = maleValue
         if (maleValue === '-') {
