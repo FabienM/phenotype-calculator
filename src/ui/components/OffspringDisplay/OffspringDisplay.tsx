@@ -36,9 +36,9 @@ function OffSpringDisplay(props: OffspringDisplayProp) {
         offsprings
             .map(offspring => getPhenotype(offspring)));
     const columns: GridColDef[] = [
-        { field: 'sex', headerName: 'Sex', width: 150 },
-        { field: 'description', headerName: 'Description', width: 150 },
-        { field: 'ratio', headerName: 'Ratio', width: 150, type: "number" },
+        { field: 'sex', headerName: 'Sex', minWidth: 100 },
+        { field: 'description', headerName: 'Description', minWidth: 200 },
+        { field: 'ratio', headerName: 'Ratio', minWidth: 100, type: "number" },
     ];
     const columnVisibilityModel: GridColumnVisibilityModel = {}
     props.race.traits.forEach(trait => {

@@ -8,7 +8,6 @@ import GeneSelector from "../GeneSelector/GeneSelector";
 import TraitSelector from "../TraitSelector/TraitSelector";
 
 interface CatDescriptorProp {
-    name: string
     race: Race
     sex: Sex
     onChange?: (g: Genotype) => void
@@ -21,10 +20,12 @@ function CatDescriptor(prop: CatDescriptorProp) {
 
     return (
         <Box>
-            <Typography level="h3">{prop.name}</Typography>
-            {prop.race.genes.map(gene =>
-                <GeneChip key={gene.code} alleles={genotypeState[gene.code] ?? ''} />
-            )}
+            <Typography level="h3">
+                Select your <Typography textColor="primary.500">{prop.sex}</Typography> (
+                {prop.race.genes.map(gene =>
+                    <GeneChip key={gene.code} alleles={genotypeState[gene.code] ?? ''} />
+                )})
+            </Typography>
             <Grid container spacing={3}>
                 <Grid sm={4}>
                     <Stack>

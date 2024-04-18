@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
+import { CssBaseline } from '@mui/joy';
 import { raceBirman } from './genetics/birman.race';
 import BirmanPage from './ui/pages/Birman.page';
 
@@ -14,7 +15,8 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <BirmanPage race={raceBirman} />
+      <CssBaseline />
+      <BirmanPage raceName='Birman' race={raceBirman} />
   </React.StrictMode>
 );
 

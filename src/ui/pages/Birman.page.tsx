@@ -7,6 +7,7 @@ import OffSpringDisplay from '../components/OffspringDisplay/OffspringDisplay';
 
 interface BirmanPageProp {
     race: Race
+    raceName: string
 }
 
 function BirmanPage(props: BirmanPageProp) {
@@ -15,13 +16,14 @@ function BirmanPage(props: BirmanPageProp) {
     const sexes: Sex[] = ['male', 'female']
 
     return (
-        <Stack>
+        <Stack bgcolor='background.body' sx={{m: 5}} spacing={2}>
+            <Typography level='h1'>Calculate offsprings for a <Typography textColor='primary.500'>{props.raceName}</Typography></Typography>
             <Typography level='h2'>Parents</Typography>
-            <Grid container spacing={3}>
+            <Grid container spacing={2}>
                 {sexes.map(sex => {
                     return (
                         <Grid key={sex} sm={6}>
-                            <CatDescriptor sex={sex} race={props.race} name={sex} onChange={g => {
+                            <CatDescriptor sex={sex} race={props.race} onChange={g => {
                                 const organism = { genotype: g, race: props.race, sex: sex };
                                 if (sex === "female") {
                                     setFemaleState(organism);
