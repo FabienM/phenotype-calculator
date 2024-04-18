@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
       <CssBaseline />
-      <BirmanPage raceName='Birman' race={raceBirman} />
+      <BirmanPage raceName='Birman cat' race={raceBirman} />
   </React.StrictMode>
 );
 
