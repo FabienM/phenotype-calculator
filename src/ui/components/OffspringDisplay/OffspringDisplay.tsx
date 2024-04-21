@@ -4,7 +4,6 @@ import { generateOffsprings } from "../../../services/offsprings.services";
 import { getPhenotype, isValid } from "../../../services/organism.services";
 import { describe, getPhenotypeStats } from "../../../services/phenotype.services";
 import { Organism, Race } from "../../../types/interfaces";
-import { useState } from "react";
 
 interface OffspringDisplayProp {
     race: Race
@@ -48,11 +47,11 @@ function OffSpringDisplay(props: OffspringDisplayProp) {
     ];
     props.race.traits.forEach(trait => {
         columns.push({
-            field: trait.code, headerName: trait.code, width: 150,
+            field: trait.code, headerName: trait.code, width: 150 
         });
     });
     const rows: GridRowsProp = Object.keys(stats).map(code => {
-        let result: { [key: string]: string | number | null } = {
+        const result: { [key: string]: string | number | null } = {
             id: code,
             sex: stats[code].sex,
             description: describe(props.race, stats[code].phenotype),
