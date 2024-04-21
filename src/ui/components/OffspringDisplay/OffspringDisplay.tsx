@@ -55,7 +55,7 @@ function OffSpringDisplay(props: OffspringDisplayProp) {
             id: code,
             sex: stats[code].sex,
             description: describe(props.race, stats[code].phenotype),
-            ratio: stats[code].ratio,
+            ratio: Number(stats[code].ratio).toLocaleString(undefined, {style: 'percent', minimumFractionDigits:2, maximumFractionDigits:2}),
         };
         props.race.traits.forEach(trait =>
             result[trait.code] = stats[code].phenotype[trait.code]
