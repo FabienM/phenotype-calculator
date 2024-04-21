@@ -4,11 +4,17 @@ import { generateOffsprings } from "../../../services/offsprings.services";
 import { getPhenotype, isValid } from "../../../services/organism.services";
 import { describe, getPhenotypeStats } from "../../../services/phenotype.services";
 import { Organism, Race } from "../../../types/interfaces";
+import { useState } from "react";
 
 interface OffspringDisplayProp {
     race: Race
     female?: Organism
     male?: Organism
+}
+
+function initColumnVisibilityModel(race: Race): GridColumnVisibilityModel {
+    return Object.assign({},
+        ...race.traits.map(trait => ({ [trait.code]: true })));
 }
 
 function OffSpringDisplay(props: OffspringDisplayProp) {
@@ -40,13 +46,11 @@ function OffSpringDisplay(props: OffspringDisplayProp) {
         { field: 'description', headerName: 'Description', minWidth: 200 },
         { field: 'ratio', headerName: 'Ratio', minWidth: 100, type: "number" },
     ];
-    const columnVisibilityModel: GridColumnVisibilityModel = {}
     props.race.traits.forEach(trait => {
         columns.push({
             field: trait.code, headerName: trait.code, width: 150,
         });
-        columnVisibilityModel[trait.code] = false;
-    })
+    });
     const rows: GridRowsProp = Object.keys(stats).map(code => {
         const result: { [key: string]: string | number | null } = {
             id: code,
@@ -61,7 +65,9 @@ function OffSpringDisplay(props: OffspringDisplayProp) {
     });
     return (
         <DataGrid
-            columnVisibilityModel={columnVisibilityModel}
+            initialState={{
+                columns: initColumnVisibilityModel(props.race)
+            }}
             slots={{
                 toolbar: GridToolbar,
             }}
