@@ -1,6 +1,48 @@
-# Getting Started with Create React App
+# Cat Phenotype Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+
+The Cat Phenotype Calculator is a web application built with React and Typescript that allows users to calculate the potential phenotypes for the offspring of two cats of the same breed. By inputting the genetic information of the parent cats, users can visualize and understand the possible outcomes for traits such as coat color, pattern, and eye color in their kittens.
+At the moment the only supported breed is Birman.
+
+## Features
+
+- Input fields for specifying the genetic information of two parent cats.
+- Calculation of potential phenotypes for the offspring based on Mendelian genetics principles.
+- Visual representation of possible coat colors and patterns for the kittens.
+- User-friendly interface with clear instructions and tooltips for genetic terms.
+
+## Technologies Used
+
+- React: JavaScript library for building user interfaces.
+- Typescript: Superset of JavaScript that adds static typing.
+- HTML/CSS: Markup and styling for the web interface.
+- Mendelian Genetics Algorithms: Algorithms based on Mendel's laws to calculate offspring phenotypes.
+- Joy-UI and DataGrid from Material Design.
+
+## Getting Started
+
+To run the Cat Phenotype Calculator locally, follow these steps:
+
+1. Clone this repository to your local machine.
+2. Navigate to the project directory.
+3. Install dependencies by running `npm install`.
+4. Start the development server with `npm start`.
+5. Open your web browser and visit `http://localhost:3000` to view the application.
+
+## Usage
+
+1. Enter the genetic information for the parent cats in the provided input fields.
+2. Explore the visual representation of possible coat colors and patterns for the kittens.
+3. Experiment with different combinations of genetic information to see how it affects the outcomes.
+
+## Contributing
+
+Contributions are welcome! If you have suggestions for new features, bug fixes, or improvements, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Available Scripts
 
@@ -39,8 +81,8 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Acknowledgements
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- This project was inspired by the curiosity of my wonderful wife, cat breeders and enthusiasts about the genetics behind cat phenotypes.
+- Special thanks to the contributors of React, Typescript, and other open-source libraries used in this project.
