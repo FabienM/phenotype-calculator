@@ -13,7 +13,7 @@ interface OffspringDisplayProp {
 
 function initColumnVisibilityModel(race: Race): GridColumnVisibilityModel {
     return Object.assign({},
-        ...race.traits.map(trait => ({ [trait.code]: true })));
+        ...race.traits.map(trait => ({ [trait.code]: false })));
 }
 
 function OffSpringDisplay(props: OffspringDisplayProp) {
@@ -47,7 +47,7 @@ function OffSpringDisplay(props: OffspringDisplayProp) {
     ];
     props.race.traits.forEach(trait => {
         columns.push({
-            field: trait.code, headerName: trait.code, width: 150 
+            field: trait.code, headerName: trait.code, width: 150
         });
     });
     const rows: GridRowsProp = Object.keys(stats).map(code => {
@@ -67,6 +67,7 @@ function OffSpringDisplay(props: OffspringDisplayProp) {
             initialState={{
                 columns: initColumnVisibilityModel(props.race)
             }}
+            columnVisibilityModel={initColumnVisibilityModel(props.race)}
             slots={{
                 toolbar: GridToolbar,
             }}

@@ -1,8 +1,8 @@
 import { Trait } from "../types/interfaces";
 import { Genotype, TraitValue } from "../types/types";
-import { geneRed } from "./genes";
+import { geneRed } from "../genes/genes";
 
-export const traitTortie: Trait = {
+const traitTortie: Trait = {
     sexes: ['female'],
     code: 'tortie', valueFor: function (genotype: Genotype): TraitValue | null {
         if (genotype[geneRed.code].indexOf('-') > -1) {
@@ -15,8 +15,9 @@ export const traitTortie: Trait = {
     },
     values: {
         'tortie': {
-            // 'red': [['O', 'O'], ['O', 'o']]
             'red': [['o', 'o']]
         }
     }
 }
+
+export default traitTortie;

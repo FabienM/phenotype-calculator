@@ -5,7 +5,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 import { CssBaseline } from '@mui/joy';
-import { raceBirman } from './genetics/birman.race';
+import { birman } from './breeds/birman.breed';
 import BirmanPage from './ui/pages/Birman.page';
 
 
@@ -16,7 +16,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
       <CssBaseline />
-      <BirmanPage raceName='Birman cat' race={raceBirman} />
+      <BirmanPage raceName='Birman cat' race={birman} />
   </React.StrictMode>
 );
 
