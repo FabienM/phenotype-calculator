@@ -15,12 +15,12 @@ function GeneSelector(props: GeneSelectorProp) {
         <Stack>
             <Typography>{props.gene.code}</Typography>
             <RadioGroup name={`${props.sex}-${props.gene.code}-group`} orientation="vertical" onChange={e => {
-                const [a1, a2] = e.target.value.split(',')
+                let [a1, a2] = e.target.value.split(',')
                 props.onChange?.([a1, a2])
             }}>
                 <List>
                     {getAlleleCombinations(props.gene, props.sex).map(allele => {
-                        const enabled = props.enabledPairs?.some(pair => allelePairEquals(allele, pair));
+                        let enabled = props.enabledPairs?.some(pair => allelePairEquals(allele, pair));
                         return (
                             <ListItem variant={enabled ? 'outlined' : 'soft'} key={`${allele[0]}${allele[1]}`}>
                                 <Radio

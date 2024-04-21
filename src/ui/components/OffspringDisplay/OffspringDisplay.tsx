@@ -52,7 +52,7 @@ function OffSpringDisplay(props: OffspringDisplayProp) {
         });
     });
     const rows: GridRowsProp = Object.keys(stats).map(code => {
-        const result: { [key: string]: string | number | null } = {
+        let result: { [key: string]: string | number | null } = {
             id: code,
             sex: stats[code].sex,
             description: describe(props.race, stats[code].phenotype),

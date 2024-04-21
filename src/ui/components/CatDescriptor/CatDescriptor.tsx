@@ -14,9 +14,9 @@ interface CatDescriptorProp {
 }
 
 function CatDescriptor(prop: CatDescriptorProp) {
-    const [phenotypeState, setPhenotypeState] = useState<Phenotype>({});
-    const [geneStates, setGeneStates] = useState<PossibleGenes>(getPossibleGenes(prop.race, prop.sex, phenotypeState));
-    const [genotypeState, setGenotypeState] = useState<Genotype>({});
+    let [phenotypeState, setPhenotypeState] = useState<Phenotype>({});
+    let [geneStates, setGeneStates] = useState<PossibleGenes>(getPossibleGenes(prop.race, prop.sex, phenotypeState));
+    let [genotypeState, setGenotypeState] = useState<Genotype>({});
 
     return (
         <Box>

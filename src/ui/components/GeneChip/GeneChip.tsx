@@ -11,7 +11,7 @@ function GeneChip(props: GeneChipProp) {
         return (<Chip variant="outlined">? ?</Chip>);
     }
     return (
-        <Chip variant="solid">{`${props?.alleles?.[0]} ${props?.alleles?.[1]}`}</Chip>
+        <Chip variant="solid">{`${props?.alleles?.[0] ?? ''} ${props?.alleles?.[1]}` ?? ''}</Chip>
     );
 }
 

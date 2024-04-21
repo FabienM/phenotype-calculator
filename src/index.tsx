@@ -5,7 +5,6 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 import { CssBaseline } from '@mui/joy';
-import { IntlProvider } from 'react-intl';
 import { raceBirman } from './genetics/birman.race';
 import BirmanPage from './ui/pages/Birman.page';
 
@@ -16,10 +15,8 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <CssBaseline />
-    <IntlProvider locale={navigator.language} defaultLocale='en'>
-      <BirmanPage raceName="Birman cats" race={raceBirman} />
-    </IntlProvider>
+      <CssBaseline />
+      <BirmanPage raceName='Birman cat' race={raceBirman} />
   </React.StrictMode>
 );
 

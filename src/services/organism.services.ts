@@ -9,8 +9,8 @@ export function encodeGenotype(organism: Organism): string {
 }
 
 export function getPhenotype(organism: Organism): Phenotype {
-    const phenotype: Phenotype = { 'sex': organism.sex };
-    for (const trait in organism.race.traits) {
+    let phenotype: Phenotype = { 'sex': organism.sex };
+    for (let trait in organism.race.traits) {
         phenotype[organism.race.traits[trait].code] = organism.race.traits[trait].valueFor(organism.genotype);
     }
     return phenotype

@@ -53,7 +53,7 @@ console.log(encodeGenotype(simpleMaleGatine))
 console.log(encodeGenotype(simpleGatine))
 let result = []
 let sum = getPhenotypeStats(raceSimpleBirman, offsprings)
-for (const key in sum) {
+for (let key in sum) {
     result.push([sum[key].sex, describe(raceBirman, sum[key].phenotype), sum[key].ratio])
 }
 console.table(result);
@@ -66,7 +66,7 @@ sum = getPhenotypeStats(
     raceBirman,
     generateOffsprings(maleGatine, gatine).map(offspring => getPhenotype(offspring))
 );
-for (const key in sum) {
+for (let key in sum) {
     result.push([sum[key].sex, describe(raceBirman, sum[key].phenotype), sum[key].ratio])
 }
 console.table(result)
